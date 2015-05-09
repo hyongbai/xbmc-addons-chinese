@@ -252,17 +252,18 @@ def progList(name,id,page,genre,area,year,order):
             p_name1 = p_name + '（' + match1.group(1) + '）'
         else:
             p_name1 = p_name
-        if match[i].find('<i class="ico-1080P"')>0:
-            p_name1 += '[1080P]'
-            p_res = 1
-        elif match[i].find('<i class="ico-SD"')>0:
-            p_name1 += '[超清]'
-            p_res = 2
-        elif match[i].find('<i class="ico-HD"')>0:
-            p_name1 += '[高清]'
-            p_res = 3
-        else:
-            p_res = 4
+        p_res = 4
+        # if match[i].find('<i class="ico-1080P"')>0:
+        #     p_name1 += '[1080P]'
+        #     p_res = 1
+        # elif match[i].find('<i class="ico-SD"')>0:
+        #     p_name1 += '[超清]'
+        #     p_res = 2
+        # elif match[i].find('<i class="ico-HD"')>0:
+        #     p_name1 += '[高清]'
+        #     p_res = 3
+        # else:
+        #     p_res = 4
         if match[i].find('<i class="ico-ispay"')>0:
             p_name1 += '[付费节目]'
         li = xbmcgui.ListItem(str(i + 1) + '. ' + p_name1, iconImage = '', thumbnailImage = p_thumb)
